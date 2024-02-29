@@ -1,0 +1,9 @@
+ul {
+  list-style: none;
+}
+
+.task {
+  background-color: #7fd7f2;
+  border-radius: 10px;
+  width: 400px;
+}

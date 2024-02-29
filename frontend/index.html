@@ -19,12 +19,21 @@
     <!-- Axios -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
+    <!-- Link css -->
+    <link rel="stylesheet" href="./style.css" />
+
     <!-- Link main.js -->
     <script src="./main.js" defer></script>
   </head>
   <body>
     <div id="app">
-      <h1>{{ title }}</h1>
+      <div class="container">
+        <h1>{{ title }}</h1>
+        <h3>Lista</h3>
+        <ul class="p-0">
+          <li class="task p-3 mb-3 fs-5" v-for="item in todoList">{{item}}</li>
+        </ul>
+      </div>
     </div>
   </body>
 </html>
