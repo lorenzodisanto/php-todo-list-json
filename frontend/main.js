@@ -43,6 +43,8 @@ const app = createApp({
         )
         .then((response) => {
           console.log(response.data);
+          //   stampo nel frontend il nuovo item
+          this.todoList = response.data;
         });
     },
   },
