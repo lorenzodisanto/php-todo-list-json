@@ -43,7 +43,9 @@
         <!-- Lista  -->
         <h3>Lista</h3>
         <ul class="p-0">
-          <li class="task p-3 mb-3 fs-5" v-for="item in todoList">{{item}}</li>
+          <li class="task p-3 mb-3 fs-5" v-for="item in todoList">
+            {{item.text}}
+          </li>
         </ul>
       </div>
     </div>

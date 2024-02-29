@@ -7,7 +7,11 @@ $json_todolist = file_get_contents("../data/todolist.json");
 $todolist_array = json_decode($json_todolist);
 
 // aggiungiamo all'array il nuovo item 
-$todolist_array[] = $_POST["item"];
+$todolist_array[] = [
+    "text"=> $_POST["item"],
+    "done" => false
+];
+
 
 // trasformo l'array in json
 $json_res = json_encode($todolist_array);
