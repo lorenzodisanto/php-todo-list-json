@@ -29,6 +29,16 @@
     <div id="app">
       <div class="container">
         <h1>{{ title }}</h1>
+        <h2>Aggiungi nella lista</h2>
+        <input
+          v-model="newItem"
+          @keyUp.enter="addNewItem()"
+          type="text"
+          class="form-control"
+        />
+        <button @click="addNewItem()" class="btn btn-success my-2">
+          Aggiungi
+        </button>
         <h3>Lista</h3>
         <ul class="p-0">
           <li class="task p-3 mb-3 fs-5" v-for="item in todoList">{{item}}</li>

@@ -5,6 +5,7 @@ const app = createApp({
     return {
       title: "Todo List",
       todoList: [],
+      newItem: "",
     };
   },
 
@@ -16,6 +17,32 @@ const app = createApp({
         .then((response) => {
           // stampo dati ricevuti
           this.todoList = response.data;
+        });
+    },
+
+    // aggiunta nuovo item
+    addNewItem() {
+      const item = this.newItem;
+
+      console.log(item);
+      this.newItem = "";
+
+      //   parametri chiamata axios
+      const data = { item };
+
+      const params = {
+        headers: { "Content-Type": "multipart/form-data" },
+      };
+
+      //   chiamata post al php
+      axios
+        .post(
+          "http://localhost/php-todo-list-json/backend/api/store-item.php",
+          data,
+          params
+        )
+        .then((response) => {
+          console.log(response.data);
         });
     },
   },
