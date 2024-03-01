@@ -32,7 +32,7 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
     <!-- Link main.js -->
-    <script src="./js/main.js" defer></script>
+    <script src="./main.js" defer></script>
   </head>
   <body>
     <div id="app">
@@ -52,13 +52,12 @@
         <!-- Lista  -->
         <h3>Lista</h3>
         <ul class="p-0">
-          <li
-            class="task p-3 mb-3 fs-5"
-            v-for="(item, index) in todoList"
-            @click="changeStatus(item, index)"
-          >
+          <li class="task p-3 mb-3 fs-5" v-for="(item, index) in todoList">
             <!-- testo -->
-            <div :class="item.done ? 'text-decoration-line-through': ''">
+            <div
+              :class="item.done ? 'text-decoration-line-through': ''"
+              @click="changeStatus(item, index)"
+            >
               {{item.text}}
             </div>
             <!-- pulsante elimina -->
