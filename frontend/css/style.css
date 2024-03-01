@@ -1,0 +1,31 @@
+ul {
+  list-style: none;
+}
+
+.task {
+  background-color: #7fd7f2;
+  border-radius: 10px;
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.delete {
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 30px;
+  border-radius: 10px;
+  width: 30px;
+  height: 30px;
+}
+
+.delete:hover {
+  border: 1px solid red;
+}
+
+.delete i:hover {
+  color: red;
+}

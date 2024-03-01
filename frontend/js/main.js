@@ -62,6 +62,23 @@ const app = createApp({
           this.todoList = response.data;
         });
     },
+
+    // cancella elemento dalla lista
+    deleteItem(index) {
+      // parametri
+      const data = { index };
+
+      const params = {
+        headers: { "Content-Type": "multipart/form-data" },
+      };
+
+      // chiamata axios
+      axios
+        .post("../backend/api/delete-item.php", data, params)
+        .then((response) => {
+          this.todoList = response.data;
+        });
+    },
   },
 
   //   richiesta al caricamento della pagina
