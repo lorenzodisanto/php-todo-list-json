@@ -1,6 +1,7 @@
 [
   { "text": "andare in palestra", "done": false },
   { "text": "aperitivo con amici", "done": false },
-  { "text": "lavare auto", "done": false },
-  { "text": "fare la spesa", "done": false }
+  { "text": "lavare auto", "done": true },
+  { "text": "fare la spesa", "done": false },
+  { "text": "fare la lavatrice", "done": true }
 ]

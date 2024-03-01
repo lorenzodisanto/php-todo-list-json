@@ -12,12 +12,10 @@ const app = createApp({
   methods: {
     // richiesta axios
     fetchTodoList() {
-      axios
-        .get("http://localhost/php-todo-list-json/backend/api/get-list.php")
-        .then((response) => {
-          // stampo dati ricevuti
-          this.todoList = response.data;
-        });
+      axios.get("../backend/api/get-list.php").then((response) => {
+        // stampo dati ricevuti
+        this.todoList = response.data;
+      });
     },
 
     // aggiunta nuovo item
@@ -36,14 +34,31 @@ const app = createApp({
 
       //   chiamata post al php
       axios
-        .post(
-          "http://localhost/php-todo-list-json/backend/api/store-item.php",
-          data,
-          params
-        )
+        .post("../backend/api/store-item.php", data, params)
         .then((response) => {
-          console.log(response.data);
+          // console.log(response.data);
           //   stampo nel frontend il nuovo item
+          this.todoList = response.data;
+        });
+    },
+
+    // cambio dello status
+    changeStatus(item, index) {
+      const newStatus = !index.done;
+
+      //   parametri chiamata axios
+      const data = { index, text: item.text, done: newStatus };
+
+      const params = {
+        headers: { "Content-Type": "multipart/form-data" },
+      };
+
+      //   chiamata post al php
+      axios
+        .post("../backend/api/status-item.php", data, params)
+        .then((response) => {
+          // console.log(response.data);
+          //   stampo item aggiornato
           this.todoList = response.data;
         });
     },

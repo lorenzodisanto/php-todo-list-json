@@ -43,7 +43,12 @@
         <!-- Lista  -->
         <h3>Lista</h3>
         <ul class="p-0">
-          <li class="task p-3 mb-3 fs-5" v-for="item in todoList">
+          <li
+            :class="item.done ? 'text-decoration-line-through': ''"
+            class="task p-3 mb-3 fs-5"
+            v-for="(item, index) in todoList"
+            @click="changeStatus(item, index)"
+          >
             {{item.text}}
           </li>
         </ul>
